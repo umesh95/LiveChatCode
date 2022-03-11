@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".SessionSelectorActivity"
+    android:background="#ffffff">
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <ImageView
+            android:id="@+id/liveswitchView"
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/liveswitch_logo" />
+
+        <ImageView
+            android:id="@+id/logoView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/liveswitchView"
+            android:scaleType="fitCenter"
+            android:src="@drawable/fm_logo" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header"
+        android:layout_above="@+id/footer">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Name"
+            android:id="@+id/nameLabel"
+            android:textColor="#1AA8E0"
+            android:layout_above="@+id/channelLabel"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Channel ID"
+            android:id="@+id/channelLabel"
+            android:layout_below="@+id/userNameInput"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="27dp"
+            android:textColor="#1AA8E0" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/userNameInput"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/channelLabel"
+            android:layout_marginLeft="20dp"
+            android:textAlignment="center" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/channelInput"
+            android:layout_alignBottom="@+id/channelLabel"
+            android:layout_alignParentEnd="true"
+            android:layout_alignStart="@+id/userNameInput"
+            android:textAlignment="center"
+            android:inputType="number" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Join"
+            android:id="@+id/joinButton"
+            android:layout_below="@+id/channelInput"
+            android:layout_alignParentEnd="true"
+            android:textColor="#1AA8E0" />
+
+        <Spinner
+            android:id="@+id/connectionModeInput"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="94dp"
+            android:layout_marginTop="106dp" />
+
+        <CheckBox
+            android:id="@+id/audioOnlyInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:text="Audio Only"
+            android:layout_alignTop="@+id/connectionModeInput"
+            android:layout_alignParentStart="true" />
+
+        <CheckBox
+            android:id="@+id/receiveOnlyInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/audioOnlyInput"
+            android:layout_below="@+id/audioOnlyInput"
+            android:text="Receive Only" />
+
+        <CheckBox
+            android:id="@+id/simulcastInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/receiveOnlyInput"
+            android:layout_below="@+id/receiveOnlyInput"
+            android:text="Simulcast" />
+
+        <CheckBox
+            android:id="@+id/screenShareInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/simulcastInput"
+            android:layout_below="@+id/simulcastInput"
+            android:text="Screen Share" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:id="@+id/footer"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/imageView"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/phone_icon" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/imageView2"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/email_icon" />
+
+        <TextView
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="1-888-FRZN-MTN (379-6686)"
+            android:id="@+id/phoneText"
+            android:layout_toEndOf="@+id/imageView"
+            android:layout_alignBottom="@+id/imageView"
+            android:layout_alignTop="@+id/imageView" />
+
+        <TextView
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="info@frozenmountain.com"
+            android:id="@+id/emailText"
+            android:layout_toEndOf="@+id/imageView2"
+            android:layout_alignBottom="@+id/imageView2"
+            android:layout_alignTop="@+id/imageView2" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/twitterIcon"
+            android:src="@drawable/twitter_icon"
+            android:layout_alignParentBottom="false"
+            android:layout_toLeftOf="@+id/facebookIcon"
+            android:layout_alignTop="@+id/facebookIcon"
+            android:layout_marginRight="5dp" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/facebookIcon"
+            android:src="@drawable/facebook_icon"
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentRight="false"
+            android:layout_toLeftOf="@+id/linkedinIcon"
+            android:layout_alignTop="@+id/linkedinIcon"
+            android:layout_marginRight="5dp" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/linkedinIcon"
+            android:src="@drawable/linkedin_icon"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+</RelativeLayout>

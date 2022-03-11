@@ -1,0 +1,69 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.fm.liveswitch.chat"
+        minSdkVersion 23
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+    signingConfigs {
+        release {
+            storeFile file('insecure.jks')
+            storePassword 'insecure'
+            keyAlias 'insecure'
+            keyPassword 'insecure'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    packagingOptions {
+        exclude 'lib/linux_armv7/*'
+        exclude 'lib/linux_armv8/*'
+        exclude 'lib/linux_arm64/*'
+        exclude 'lib/linux_x64/*'
+        exclude 'lib/linux_x86/*'
+        exclude '**/libaudioprocessingfm.so'
+        exclude '**/libopenh264fm.so'
+        exclude '**/libopusfm.so'
+        exclude '**/libvpxfm.so'
+        exclude '**/libyuvfm.so'
+    }
+    sourceSets {
+        main {
+            jniLibs {
+                srcDirs = [
+                    'src/main/jniLibs'
+                ]
+            }
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: '../lib')
+
+
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:design:26.1.0'
+    implementation 'com.android.support:support-v4:26.1.0'
+    implementation 'com.android.support:multidex:1.0.3'
+}
