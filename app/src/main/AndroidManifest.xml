@@ -14,8 +14,7 @@
         android:label="LiveSwitch Android"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name="android.support.multidex.MultiDexApplication"
-        android:largeHeap="true">
+        android:name="android.support.multidex.MultiDexApplication">
         <activity android:name=".SessionSelectorActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
